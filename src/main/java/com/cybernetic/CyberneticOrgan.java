@@ -5,7 +5,7 @@ public class CyberneticOrgan {
     String model;
     String functionality;
     boolean isCompatible;
-
+//
     public CyberneticOrgan(int organID, String organModel, String organFunctionality, boolean organIsCompatible){
         id = organID;
         model = organModel;

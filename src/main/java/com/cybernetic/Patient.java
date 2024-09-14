@@ -24,7 +24,7 @@ public class Patient {
             installedOrgans[organCount++] = organ;
             System.out.println("Organ added successfully");
         } else {
-            System.out.println("No space available to add more organs.");
+            System.out.println("No space available to add more organs.");//
         }
         }
 

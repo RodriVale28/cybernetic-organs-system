@@ -59,7 +59,7 @@ public class OrganInventory {
         Collections.sort(organsInInventory, new Comparator<CyberneticOrgan>() {
             @Override
             public int compare(CyberneticOrgan o1, CyberneticOrgan o2) {
-                return o1.getModel(organ).compareTo(o2.getModel(organ));
+                return o1.getModel(organ).compareTo(o2.getModel(organ));//
             }
         });
         // Return the sorted list

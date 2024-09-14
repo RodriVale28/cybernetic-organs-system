@@ -1,33 +1,36 @@
 package com.cybernetic;
 
 public class CyberneticOrgan {
-    //defining class with the following attributes
     int id;
     String model;
     String functionality;
-    boolean isOrganCompatible;
+    boolean isCompatible;
 
-    //method returning organs details
+    public CyberneticOrgan(int organID, String organModel, String organFunctionality, boolean organIsCompatible){
+        id = organID;
+        model = organModel;
+        functionality = organFunctionality;
+        isCompatible = organIsCompatible;
+    }
+
     public String getDetails(int id, String model, String functionality){
         this.id = id;
         this.model = model;
         this.functionality = functionality;
-        String organDetails = "Organ id: " + id +
+        return "Organ id: " + id +
                 "\nOrgan model: " + model +
                 "\nFunctionality: " + functionality;
-        return organDetails;
     }
 
-    public String getModel() {
-        return model;
+    public String isCompatible(String patientCompatibility){
+        return "Organ is compatible!";
     }
 
-    public String getFunctionality() {
+    public String getFunctionality(String organFunction){
         return functionality;
     }
 
-    //method to check if organ is compatible
-    public void isCompatible(String patientCompatibility){
+    public String getModel(CyberneticOrgan organ){
+       return "Organ Model: ";
     }
-
 }

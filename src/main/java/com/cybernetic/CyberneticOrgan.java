@@ -5,7 +5,8 @@ public class CyberneticOrgan {
     String model;
     String functionality;
     boolean isCompatible;
-//
+
+
     public CyberneticOrgan(int organID, String organModel, String organFunctionality, boolean organIsCompatible){
         id = organID;
         model = organModel;
@@ -13,12 +14,14 @@ public class CyberneticOrgan {
         isCompatible = organIsCompatible;
     }
 
+
+
     public String getDetails(int id, String model, String functionality){
         this.id = id;
         this.model = model;
         this.functionality = functionality;
-        return "Organ id: " + id +
-                "\nOrgan model: " + model +
+        return "Organ model: " + model +
+                "\nOrgan ID: " + id +
                 "\nFunctionality: " + functionality;
     }
 
@@ -31,6 +34,7 @@ public class CyberneticOrgan {
     }
 
     public String getModel(CyberneticOrgan organ){
-       return "Organ Model: ";
+        String organModel = organ.toString();
+        return organModel;
     }
 }

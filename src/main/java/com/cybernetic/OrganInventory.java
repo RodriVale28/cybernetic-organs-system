@@ -15,11 +15,9 @@ public class OrganInventory {
         if(organsInInventory == null){
             System.out.println("Cannot add organ to the inventory!");
         }
-        else{
             organsInInventory.add(organ);
-            System.out.println("Organ added to the inventory!");
-        }
     }
+
     public ArrayList<CyberneticOrgan> getOrganList(){
         return new ArrayList<CyberneticOrgan>(organsInInventory);
     }
@@ -37,7 +35,7 @@ public class OrganInventory {
     }
 
     public String getOrgan(String model){
-        return "confirmation message";
+        return  model;
     }
 
     //USED AI TOOL(CHATGPT) FOR THE IF CONDITION OF THE SEARCHORGANSBYFUNCTIONALITY 09/13*******
@@ -55,15 +53,15 @@ public class OrganInventory {
 
     //USED AI Tool (ChatGPT) FOR THE SORTORGANSBYMODEL METHOD 09/13********
     public ArrayList<CyberneticOrgan> sortOrgansByModel() {
-        // Sort the list in place using a Comparator
         Collections.sort(organsInInventory, new Comparator<CyberneticOrgan>() {
             @Override
             public int compare(CyberneticOrgan o1, CyberneticOrgan o2) {
-                return o1.getModel(organ).compareTo(o2.getModel(organ));//
+                // Comparing the model of o1 with respect to o2
+                return o1.getModel(o1).compareTo(o2.getModel(o2));
             }
         });
-        // Return the sorted list
+
         return organsInInventory;
     }
+    }
 
-}

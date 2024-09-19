@@ -42,6 +42,15 @@ public class Main {
         //inventory.sortOrgansByModel();
         System.out.println("Sorted organs!");
 
+        OrganSimulation simulation = new OrganSimulation();
+        System.out.println("Initial States:");
+        System.out.printf("Heart Health: "+ simulation.getHeart().getHealth());
+        System.out.printf("Lung Health: "+ simulation.getLung().getHealth());
+        System.out.printf("Brain Health: "+ simulation.getBrain().getHealth());
+        System.out.println();
+
+        simulation.run(0);
+
 
     }
 }

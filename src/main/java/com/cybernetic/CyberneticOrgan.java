@@ -5,6 +5,7 @@ public class CyberneticOrgan {
     String model;
     String functionality;
     boolean isCompatible;
+    double health;
 
 
     public CyberneticOrgan(int organID, String organModel, String organFunctionality, boolean organIsCompatible){
@@ -12,9 +13,16 @@ public class CyberneticOrgan {
         model = organModel;
         functionality = organFunctionality;
         isCompatible = organIsCompatible;
+        this.health = 100;
     }
 
+    public double getHealth() {
+        return health;
+    }
 
+    public void setHealth(int health) {
+        this.health = Math.max(0, Math.min(100, health)); // Ensure health is within bounds
+    }
 
     public String getDetails(int id, String model, String functionality){
         this.id = id;

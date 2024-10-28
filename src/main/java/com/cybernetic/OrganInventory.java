@@ -1,31 +1,35 @@
 package com.cybernetic;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 public class OrganInventory {
-        ArrayList<CyberneticOrgan> organsInInventory = new ArrayList<>();
+    ArrayList<CyberneticOrgan> organInventory = new ArrayList<>();
 
-    public OrganInventory(){
-        //organsInInventory = organListing;
-        this.organsInInventory = new ArrayList<>();
+    public OrganInventory() {
+        this.organInventory = new ArrayList<>();
     }
 
     public void addOrgan(CyberneticOrgan organ){
-        if(organsInInventory == null){
+        if(organInventory == null){
             System.out.println("Cannot add organ to the inventory!");
         }
-            organsInInventory.add(organ);
+        organInventory.add(organ);
+    }
+
+    public String getOrgan(String model){
+        return  model;
     }
 
     public ArrayList<CyberneticOrgan> getOrganList(){
-        return new ArrayList<CyberneticOrgan>(organsInInventory);
+        return organInventory;
     }
 
     public String removeOrgan(String model){
-        for(int i = 0; i < organsInInventory.size(); i++){
-            if(organsInInventory.contains(model)){
-                organsInInventory.remove(model);
+        for(int i = 0; i < organInventory.size(); i++){
+            if(organInventory.contains(model)){
+                organInventory.remove(model);
             }
             else{
                 System.out.println("Organ not found in Inventory!");
@@ -34,16 +38,11 @@ public class OrganInventory {
         return "Organ successfully removed!";
     }
 
-    public String getOrgan(String model){
-        return  model;
-    }
-
-    //USED AI TOOL(CHATGPT) FOR THE IF CONDITION OF THE SEARCHORGANSBYFUNCTIONALITY 09/13*******
     public ArrayList<CyberneticOrgan> searchOrganByFunctionality(String functionality){
         ArrayList<CyberneticOrgan> organsByFunctionality = new ArrayList<>();
-        for(int i = 0; i < organsInInventory.size(); i++){
-            CyberneticOrgan organ = organsInInventory.get(i);
-            if(organ.getFunctionality(" ").equals(functionality)){
+        for(int i = 0; i < organInventory.size(); i++){
+            CyberneticOrgan organ = organInventory.get(i);
+            if(organ.getFunctionality().equals(functionality)){
                 organsByFunctionality.add(organ);
             }
 
@@ -51,17 +50,38 @@ public class OrganInventory {
         return organsByFunctionality;
     }
 
-    //USED AI Tool (ChatGPT) FOR THE SORTORGANSBYMODEL METHOD 09/13********
     public ArrayList<CyberneticOrgan> sortOrgansByModel() {
-        Collections.sort(organsInInventory, new Comparator<CyberneticOrgan>() {
+        Collections.sort(organInventory, new Comparator<CyberneticOrgan>() {
             @Override
             public int compare(CyberneticOrgan o1, CyberneticOrgan o2) {
-                // Comparing the model of o1 with respect to o2
-                return o1.getModel(o1).compareTo(o2.getModel(o2));
+                return o1.getModel().compareTo(o2.getModel());
             }
         });
-
-        return organsInInventory;
-    }
+        return organInventory; // Return the sorted list
     }
 
+
+    //assignment 5
+    public void sortOrganByNameModelAndCompatibilityUsingBuiltInSort() {
+        Collections.sort(organInventory, new Comparator<CyberneticOrgan>() {
+            @Override
+            public int compare(CyberneticOrgan o1, CyberneticOrgan o2) {
+                int nameComparison = o1.getName().compareTo(o2.getName());
+                if (nameComparison != 0) {
+                    return nameComparison;
+                }
+                int modelComparison = o1.getModel().compareTo(o2.getModel());
+                if (modelComparison != 0) {
+                    return modelComparison;
+                }
+                return o1.getCompatibility().compareTo(o2.getCompatibility());
+            }
+        }
+        );
+    }
+
+    public void quickSortOrganByNameModelAndCompatibility(ArrayList<CyberneticOrgan> unmodifiableOrganList){
+
+    }
+
+}

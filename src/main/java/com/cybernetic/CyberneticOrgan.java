@@ -1,53 +1,21 @@
 package com.cybernetic;
 
-public class CyberneticOrgan {
-    int id;
-    String model;
-    String functionality;
-    boolean isCompatible;
-    String name;
-    String compatibility;
+class CyberneticOrgan {
+    private String name;
+    private String bloodType;
+    private int weight;
+    private String hlaType;
 
-    public CyberneticOrgan(int id, String model, String functionality, boolean isCompatible) {
-        this.id = id;
-        this.model = model;
-        this.functionality = functionality;
-        this.isCompatible = isCompatible;
+    public CyberneticOrgan(String name, String bloodType, int weight, String hlaType) {
         this.name = name;
-        this.compatibility = compatibility;
+        this.bloodType = bloodType;
+        this.weight = weight;
+        this.hlaType = hlaType;
     }
 
-    public String getDetails(int id, String model, String functionality) {
-        String details = "Organ ID: " + this.id +
-                "\n Model: " + this.model +
-                "\nFunctionality: " + this.functionality;
-        return details;
-    }
-
-    public void isCompatible(){
-        if(!isCompatible){
-            System.out.println("Organ is not compatible!");
-        }
-        else{
-            System.out.println("Organ is compatible!");
-        }
-    }
-
-    public String getFunctionality(){
-        return functionality;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getCompatibility() {
-        return compatibility;
-    }
+    public String getName() { return name; }
+    public String getBloodType() { return bloodType; }
+    public int getWeight() { return weight; }
+    public String getHlaType() { return hlaType; }
 }
-
 

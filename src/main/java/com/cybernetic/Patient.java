@@ -58,5 +58,10 @@ public class Patient {
     public String getBloodType() { return bloodType; }
     public int getWeight() { return weight; }
     public String getHlaType() { return hlaType; }
+
+    public String getName() {
+        String name = "";
+        return name;
+    }
 }
 

@@ -74,6 +74,8 @@ class WaitingList {
         return -1;
     }
 
+
+
     public void removePatient(String patientId) {
         WaitingListNode current = head;
         WaitingListNode prev = null;

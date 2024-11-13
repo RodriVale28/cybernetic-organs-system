@@ -57,10 +57,12 @@ public class Patient {
         return hlaType;
     }
 
-    public boolean getName() {
+    public void getName() {
+        String name;
     }
 
-    public boolean getId() {
+    public void getId() {
+        int id;
     }
 }
 

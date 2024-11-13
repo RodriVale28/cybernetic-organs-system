@@ -112,6 +112,8 @@ public class OrganInventory {
         return i + 1;
     }
 
+
+
     private int compareOrgan(CyberneticOrgan o1, CyberneticOrgan o2) {
         int nameCompare = o1.getName().compareTo(o2.getName());
         if (nameCompare != 0) return nameCompare;

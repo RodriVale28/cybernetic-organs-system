@@ -245,6 +245,5 @@ public class OrganCompatibilityAnalyzer {
     private boolean isCompatible(CyberneticOrgan organ, Patient patient) {
         return true; // Placeholder
 
-
-
-    }}
+    }
+}

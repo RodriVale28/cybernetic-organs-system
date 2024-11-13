@@ -225,11 +225,8 @@ public class Main {
         waitingList.removePatient(matchedPatient.getId());
         System.out.println("Updated Waiting List:");
         waitingList.displayWaitingList();
-
-
-
     }
-    }
+}
 
 
 

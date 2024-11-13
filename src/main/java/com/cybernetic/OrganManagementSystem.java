@@ -45,6 +45,8 @@ import java.util.stream.Collectors;
                     .collect(Collectors.toList());
         }
 
+
+
         public List<CyberneticOrgan> getTopCompatibleOrgans(Patient patient, int n) {
             //TODO: Implement this method
             return organs.stream()

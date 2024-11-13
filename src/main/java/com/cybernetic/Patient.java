@@ -56,5 +56,11 @@ public class Patient {
         String hlaType = " ";
         return hlaType;
     }
+
+    public boolean getName() {
+    }
+
+    public boolean getId() {
+    }
 }
 

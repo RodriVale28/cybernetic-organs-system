@@ -7,6 +7,7 @@ import java.util.Map;
 public class OrganCompatibilityAnalyzer {
     private List<CyberneticOrgan> organs;
     private List<Patient> patients;
+    /*
 
     public OrganCompatibilityAnalyzer() {
         organs = new ArrayList<>();
@@ -137,5 +138,66 @@ public class OrganCompatibilityAnalyzer {
             }
             System.out.println();
         }
+    }*/
+
+    //A S S I G N M E N T 7
+    public void addOrgan(CyberneticOrgan organ) {
+        organs.add(organ);
     }
+
+    public void addPatient(Patient patient) {
+        patients.add(patient);
+    }
+
+
+    public List<CyberneticOrgan> getCompatibleOrgans(Patient patient) {
+        //TODO: Implement this method
+        throw new UnsupportedOperationException("Not implemented yet");
+    }
+
+
+    public Map<Patient, List<Double>> calculateCompatibilityScores() {
+
+        //TODO: Implement this method
+        throw new UnsupportedOperationException("Not implemented yet");
+    }
+
+    double calculateCompatibilityScore(CyberneticOrgan organ, Patient patient) {
+        double bloodTypeScore = calculateBloodTypeCompatibility(organ.getBloodType(), patient.getBloodType());
+        double weightScore = calculateWeightCompatibility(organ.getWeight(), patient.getWeight());
+        double hlaScore = calculateHlaCompatibility(organ.getHlaType(), patient.getHlaType());
+        return (bloodTypeScore * 0.4) + (weightScore * 0.3) + (hlaScore * 0.3);
+    }
+
+
+    private int calculateBloodTypeCompatibility(String donorType, String recipientType) {
+        //TODO: Calculate compatibility for each organ-patient pair based on compatibility calculation rules.
+        if (donorType.equals(recipientType)) {
+            return 1;
+        } else if (donorType.equals("O+") || donorType.equals("O-")) {
+            return 0.5;
+        } else if (recipientType.equals("AB+")) {
+            return 1;
+        }
+        // More complex rules can be added here
+        return 0;
+    }
+
+    private int calculateWeightCompatibility(int organWeight, int patientWeight) {
+        //TODO: Calculate compatibility for each organ-patient pair based on compatibility calculation rules.
+        int weightDifference = Math.abs(organWeight - patientWeight);
+        if (weightDifference <= 20) {
+            return 1;
+        } else if (weightDifference <= 50) {
+            return 0.5;
+        }
+        return 0;
+    }
+
+    private double calculateHlaCompatibility(String organHla, String patientHla) {
+        //TODO: Calculate compatibility for each organ-patient pair based on compatibility calculation rules.
+        return organHla.equals(patientHla) ? 1.0 : 0.0;
+    }
+
+
 }

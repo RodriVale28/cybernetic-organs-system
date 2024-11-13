@@ -10,14 +10,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class OrganManagementSystem {
-    public void getUniqueBloodTypes() {
-        String bloodtype;
-    }
-
-
-    //A S S I N G M E N T 7
-
     public class OrganManagementSystem {
         private List<CyberneticOrgan> organs;
         private List<Patient> patients;
@@ -63,4 +55,4 @@ public class OrganManagementSystem {
                     .collect(Collectors.toList());
         }
     }
-}
+

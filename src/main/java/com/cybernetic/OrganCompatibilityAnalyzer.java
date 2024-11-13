@@ -141,6 +141,7 @@ public class OrganCompatibilityAnalyzer {
     }*/
 
     //A S S I G N M E N T 7
+    /*
     public void addOrgan(CyberneticOrgan organ) {
         organs.add(organ);
     }
@@ -198,6 +199,52 @@ public class OrganCompatibilityAnalyzer {
         //TODO: Calculate compatibility for each organ-patient pair based on compatibility calculation rules.
         return organHla.equals(patientHla) ? 1.0 : 0.0;
     }
+*/
+    //A S S I G N M E N T 8
+    public Patient findCompatiblePatient(CyberneticOrgan organ, WaitingList waitingList) {
+        //TODO: week - 8 Implement this method
+        throw new UnsupportedOperationException("Not implemented yet");
+    }
 
 
-}
+    private boolean isCompatible(CyberneticOrgan organ, Patient patient) {
+        int bloodTypeScore = calculateBloodTypeCompatibility(organ.getBloodType(), patient.getBloodType());
+        int weightScore = calculateWeightCompatibility(organ.getWeight(), patient.getWeight());
+        int hlaScore = calculateHlaCompatibility(organ.getHlaType(), patient.getHlaType());
+        return bloodTypeScore > 0 && weightScore > 0 && hlaScore > 0;
+    }
+
+    private void calculateHlaCompatibility(String hlaType, String hlaType1) {
+        String hlaCompatibility;
+    }
+
+    private void calculateWeightCompatibility(int weight, int weight1) {
+        int weightComp;
+    }
+
+    private void calculateBloodTypeCompatibility(String bloodType, String bloodType1) {
+        String bloodTypeComp;
+    }
+
+    public Patient findCompatiblePatient(CyberneticOrgan organ, WaitingList waitingList) {
+        WaitingListNode current = waitingList.head;
+
+        while (current != null) {
+            if (isCompatible(organ, current.patient)) {
+                System.out.println("Compatible patient found: " + current.patient.getName() + " (Priority: " + current.priority + ")");
+                waitingList.removePatient(current.patient.getId()); // Remove from the waiting list
+                return current.patient; // Return the compatible patient
+            }
+            current = current.next;
+        }
+
+        System.out.println("No compatible patient found.");
+        return null;
+    }
+
+    private boolean isCompatible(CyberneticOrgan organ, Patient patient) {
+        return true; // Placeholder
+
+
+
+    }}

@@ -1,6 +1,6 @@
 package com.cybernetic;
 class WaitingList {
-    private WaitingListNode head;
+    WaitingListNode head;
 
     public WaitingList() {
         head = null;

@@ -5,12 +5,21 @@ class CyberneticOrgan {
     private String bloodType;
     private static int weight;
     private String hlaType;
+    String id;
+    String model;
+    String functionality;
 
     public CyberneticOrgan(String name, String bloodType, int weight, String hlaType) {
         this.name = name;
         this.bloodType = bloodType;
         this.weight = weight;
         this.hlaType = hlaType;
+    }
+
+    public void getDetails(){
+        int id;
+        String model;
+        String Functionality;
     }
 
 
@@ -27,6 +36,12 @@ class CyberneticOrgan {
 
     public void getFunctionality() {
         String functionality;
+    }
+
+    public void getCompatibility() {
+    }
+
+    public void getModel() {
     }
 }
 

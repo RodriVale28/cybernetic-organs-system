@@ -40,5 +40,21 @@ public class Patient {
         }
         return organList;
     }
+
+    public String getBloodType() {
+        String bloodType = "";
+        return bloodType;
+    }
+
+    public int getWeight() {
+        int weight = 0;
+        return weight;
+
+    }
+
+    public String getHlaType() {
+        String hlaType = " ";
+        return hlaType;
+    }
 }
 

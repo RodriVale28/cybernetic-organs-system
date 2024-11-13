@@ -131,104 +131,11 @@ public class OrganCompatibilityAnalyzer {
         System.out.println();
 
         for (int i = 0; i < matrix.length; i++) {
-            System.out.printf( i + 1); // Organ header
+            System.out.printf(i + 1); // Organ header
             for (double score : matrix[i]) {
-                System.out.printf( score);
+                System.out.printf(score);
             }
             System.out.println();
         }
-    }
-
-    //A S S I G N M E N T 7
-    public void addOrgan(CyberneticOrgan organ) {
-        organs.add(organ);
-    }
-
-    public void addPatient(Patient patient) {
-        patients.add(patient);
-    }
-
-
-    public List<CyberneticOrgan> getCompatibleOrgans(Patient patient) {
-        //TODO: Implement this method
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
-
-
-    public Map<Patient, List<Double>> calculateCompatibilityScores() {
-
-        //TODO: Implement this method
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
-
-    double calculateCompatibilityScore(CyberneticOrgan organ, Patient patient) {
-        double bloodTypeScore = calculateBloodTypeCompatibility(organ.getBloodType(), patient.getBloodType());
-        double weightScore = calculateWeightCompatibility(organ.getWeight(), patient.getWeight());
-        double hlaScore = calculateHlaCompatibility(organ.getHlaType(), patient.getHlaType());
-        return (bloodTypeScore * 0.4) + (weightScore * 0.3) + (hlaScore * 0.3);
-    }
-
-
-    private int calculateBloodTypeCompatibility(String donorType, String recipientType) {
-        //TODO: Calculate compatibility for each organ-patient pair based on compatibility calculation rules.
-        if (donorType.equals(recipientType)) {
-            return 1;
-        } else if (donorType.equals("O+") || donorType.equals("O-")) {
-            return 0.5;
-        } else if (recipientType.equals("AB+")) {
-            return 1;
-        }
-        // More complex rules can be added here
-        return 0;
-    }
-
-    private int calculateWeightCompatibility(int organWeight, int patientWeight) {
-        //TODO: Calculate compatibility for each organ-patient pair based on compatibility calculation rules.
-        int weightDifference = Math.abs(organWeight - patientWeight);
-        if (weightDifference <= 20) {
-            return 1;
-        } else if (weightDifference <= 50) {
-            return 0.5;
-        }
-        return 0;
-    }
-
-    private double calculateHlaCompatibility(String organHla, String patientHla) {
-        //TODO: Calculate compatibility for each organ-patient pair based on compatibility calculation rules.
-        return organHla.equals(patientHla) ? 1.0 : 0.0;
-    }
-
-    //A S S I G N M E N T 8
-    public Patient findCompatiblePatient(CyberneticOrgan organ, WaitingList waitingList) {
-        //TODO: week - 8 Implement this method
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
-
-
-    private boolean isCompatible(CyberneticOrgan organ, Patient patient) {
-        int bloodTypeScore = calculateBloodTypeCompatibility(organ.getBloodType(), patient.getBloodType());
-        int weightScore = calculateWeightCompatibility(organ.getWeight(), patient.getWeight());
-        int hlaScore = calculateHlaCompatibility(organ.getHlaType(), patient.getHlaType());
-        return bloodTypeScore > 0 && weightScore > 0 && hlaScore > 0;
-    }
-
-    public Patient findCompatiblePatient(CyberneticOrgan organ, WaitingList waitingList) {
-        WaitingListNode current = waitingList.head;
-
-        while (current != null) {
-            if (isCompatible(organ, current.patient)) {
-                System.out.println("Compatible patient found: " + current.patient.getName() + " (Priority: " + current.priority + ")");
-                waitingList.removePatient(current.patient.getId()); // Remove from the waiting list
-                return current.patient; // Return the compatible patient
-            }
-            current = current.next;
-        }
-
-        System.out.println("No compatible patient found.");
-        return null;
-    }
-
-    private boolean isCompatible(CyberneticOrgan organ, Patient patient) {
-        return true; // Placeholder
     }
 }

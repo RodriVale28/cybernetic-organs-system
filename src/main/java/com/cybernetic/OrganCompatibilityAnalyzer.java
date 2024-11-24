@@ -201,12 +201,6 @@ public class OrganCompatibilityAnalyzer {
     }
 */
     //A S S I G N M E N T 8
-    public Patient findCompatiblePatient(CyberneticOrgan organ, WaitingList waitingList) {
-        //TODO: week - 8 Implement this method
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
-
-
     private boolean isCompatible(CyberneticOrgan organ, Patient patient) {
         int bloodTypeScore = calculateBloodTypeCompatibility(organ.getBloodType(), patient.getBloodType());
         int weightScore = calculateWeightCompatibility(organ.getWeight(), patient.getWeight());
@@ -242,8 +236,4 @@ public class OrganCompatibilityAnalyzer {
         return null;
     }
 
-    private boolean isCompatible(CyberneticOrgan organ, Patient patient) {
-        return true; // Placeholder
-
-    }
 }

@@ -64,5 +64,21 @@ public class Patient {
     public void getId() {
         int id;
     }
+
+    @Setter(AccessLevel.NONE)
+    private PatientHistory history;
+    public void addMedicalEvent(String medicalEvent) {
+        this.history.addMedicalEvent(medicalEvent);
+    }
+
+    public String removeMostRecentEvent() {
+        return this.history.removeMostRecentEvent();
+    }
+
+
+    public PatientHistory getHistory() {
+        PatientHistory medHistory = null;
+        return medHistory;
+    }
 }
 

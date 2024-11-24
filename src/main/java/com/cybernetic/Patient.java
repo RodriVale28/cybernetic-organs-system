@@ -82,7 +82,5 @@ public class Patient {
         return medHistory;
     }
 
-    public Map<String, Double> getMeasurements() {
-    }
 }
 

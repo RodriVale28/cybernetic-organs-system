@@ -1,5 +1,8 @@
 package com.cybernetic;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class CyberneticOrgan {
     private String name;
     private String bloodType;
@@ -42,6 +45,12 @@ class CyberneticOrgan {
     }
 
     public void getModel() {
+    }
+
+    public Map<Object, Object> getRequiredRanges() {
+        Map<Object, Object> ranges = new HashMap<>();
+        ranges.put(model, functionality);
+        return ranges;
     }
 }
 

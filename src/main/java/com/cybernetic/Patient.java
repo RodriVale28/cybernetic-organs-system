@@ -1,6 +1,7 @@
 package com.cybernetic;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Patient {
     String name;
@@ -79,6 +80,9 @@ public class Patient {
     public PatientHistory getHistory() {
         PatientHistory medHistory = null;
         return medHistory;
+    }
+
+    public Map<String, Double> getMeasurements() {
     }
 }
 

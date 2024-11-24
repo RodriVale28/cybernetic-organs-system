@@ -229,6 +229,7 @@ public class Main {
          */
 
         //ASSIGNMENT 9
+        /*
         Patient johnDoe = new Patient("P001", "John Doe", "A+", 70, "HLA-A");
         Patient janeSmith = new Patient("P002", "Jane Smith", "B-", 65, "HLA-B");
         Patient bobJohnson = new Patient("P003", "Bob Johnson", "O+", 80, "HLA-A");
@@ -276,6 +277,10 @@ public class Main {
         System.out.println("\n" + nextPatient.getName() + " is compatible with "+cyberHeart.getName()+"!\n");
 
         waitingList.printWaitingList();
+
+         */
+        //Assignment 10
+        
     }
 }
 
